@@ -1,0 +1,27 @@
+
+static void tukarDiamond(Pengguna pengguna) {
+
+    System.out.println("Rp100 = 1 Diamond");
+
+    System.out.print("Masukkan jumlah uang: Rp");
+    int jumlah = input.nextInt();
+    input.nextLine();
+
+    if (jumlah <= 0) {
+        System.out.println("Jumlah uang tidak valid.");
+        return;
+    }
+
+    if (jumlah > pengguna.uangDigital) {
+        System.out.println("Uang digital tidak cukup.");
+        return;
+    }
+
+    int diamond = jumlah / 100;
+
+    pengguna.uangDigital -= jumlah;
+    pengguna.uangGame += diamond;
+
+    System.out.println("Penukaran berhasil!");
+    System.out.println("Diamond didapat : " + diamond);
+}
